@@ -1,0 +1,36 @@
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: spin 2s linear infinite;
+  background-image: conic-gradient(
+    rgb(23, 38, 44),
+    rgb(250, 85, 96),
+    rgb(177, 75, 244),
+    rgb(23, 38, 44),
+    rgb(23, 38, 44),
+    rgb(177, 75, 244),
+    rgb(77, 145, 255),
+    rgb(23, 38, 44),
+    rgb(23, 38, 44)
+  );
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  z-index: -10;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  background: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(30px);
+  border-radius: 50%;
+}
